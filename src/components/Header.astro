@@ -1,0 +1,94 @@
+---
+interface Props {
+  title?: string;
+}
+const { title = 'PlaceBookmarks' } = Astro.props;
+---
+<header class="site-header">
+  <div class="container">
+    <a href="/" class="logo">{title}</a>
+    <nav class="main-nav" id="mainNav">
+      <a href="/">Home</a>
+      <a href="/mobile-app-development/">Overview</a>
+      <a href="/mobile-app-development/history/">History</a>
+      <a href="/mobile-app-development/technical-deep-dive/">Technical</a>
+      <a href="/mobile-app-development/ontology/">Ontology</a>
+      <a href="/mobile-app-development/trends/">Trends</a>
+      <a href="/mobile-app-development/tools/">Tools</a>
+      <a href="/mobile-app-development/challenges/">Challenges</a>
+    </nav>
+    <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation">☰</button>
+  </div>
+</header>
+
+<style>
+  .site-header {
+    background: #fff;
+    border-bottom: 1px solid #e5e5e5;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+  }
+  .logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #667eea;
+    text-decoration: none;
+  }
+  .main-nav {
+    display: flex;
+    gap: 24px;
+  }
+  .main-nav a {
+    color: #333;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+  .main-nav a:hover {
+    color: #667eea;
+  }
+  .mobile-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  @media (max-width: 768px) {
+    .main-nav {
+      display: none;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      right: 0;
+      background: #fff;
+      flex-direction: column;
+      padding: 20px;
+      border-bottom: 1px solid #e5e5e5;
+      gap: 12px;
+    }
+    .main-nav.active {
+      display: flex;
+    }
+    .mobile-toggle {
+      display: block;
+    }
+  }
+</style>
+
+<script is:inline>
+  document.getElementById('mobileToggle').addEventListener('click', function() {
+    document.getElementById('mainNav').classList.toggle('active');
+  });
+</script>

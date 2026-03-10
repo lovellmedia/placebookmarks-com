@@ -1,0 +1,211 @@
+---
+import TopicLayout from '../../layouts/TopicLayout.astro';
+
+const title = 'Mobile App Development Ontology & Knowledge Base';
+const description = 'Structured taxonomy of mobile app development terminology, concepts, frameworks, and vocabulary organized for comprehensive reference.';
+const topic = 'mobile-app-development';
+const pillar = 'ontology';
+const relatedTopics = [
+  { title: 'Overview', url: '/mobile-app-development/' },
+  { title: 'Technical Deep-Dive', url: '/mobile-app-development/technical-deep-dive/' },
+  { title: 'Trends', url: '/mobile-app-development/trends/' }
+];
+const keyPoints = [
+  'Comprehensive taxonomy of mobile development concepts',
+  'Framework classification by approach and platform',
+  'UI component vocabulary across platforms',
+  'Development lifecycle terminology'
+];
+---
+
+<TopicLayout title={title} description={description} topic={topic} pillar={pillar} relatedTopics={relatedTopics} keyPoints={keyPoints}>
+  <p>This ontology provides a structured taxonomy of mobile application development terminology, organizing concepts hierarchically to facilitate understanding and reference. By categorizing the extensive vocabulary of mobile development into logical groupings—from development approaches and frameworks to UI components and architectural patterns—this knowledge base serves as a comprehensive reference for developers, technical writers, and technology professionals seeking to navigate the complex landscape of mobile development terminology.</p>
+
+  <h2>Development Approaches Taxonomy</h2>
+  <h3>1.1 Native Development</h3>
+  <p><strong>Definition:</strong> Platform-specific development using vendor-provided languages, tools, and frameworks optimized for target operating systems.</p>
+  
+  <p><strong>iOS Native:</strong></p>
+  <ul>
+    <li><strong>Swift:</strong> Modern compiled programming language developed by Apple for iOS, macOS, watchOS, and tvOS development</li>
+    <li><strong>Objective-C:</strong> Object-oriented programming language historically used for Apple platform development</li>
+    <li><strong>UIKit:</strong> Framework providing core components for constructing and managing iOS app interfaces</li>
+    <li><strong>SwiftUI:</strong> Declarative framework for building user interfaces across Apple platforms</li>
+    <li><strong>Foundation:</strong> Base layer of functionality including data storage, text processing, and collection types</li>
+    <li><strong>Core Data:</strong> Object graph and persistence framework for managing model layer objects</li>
+    <li><strong>Xcode:</strong> Integrated Development Environment (IDE) for macOS containing development tools</li>
+    <li><strong>Cocoa Touch:</strong> UI framework for building software programs to run on iOS</li>
+  </ul>
+  
+  <p><strong>Android Native:</strong></p>
+  <ul>
+    <li><strong>Kotlin:</strong> Statically typed programming language running on JVM, preferred for Android development</li>
+    <li><strong>Java:</strong> Object-oriented programming language historically primary for Android development</li>
+    <li><strong>Android SDK:</strong> Software Development Kit providing tools and APIs for Android development</li>
+    <li><strong>Android Studio:</strong> Official IDE for Android development based on IntelliJ IDEA</li>
+    <li><strong>Jetpack Compose:</strong> Modern declarative UI toolkit for building native Android interfaces</li>
+    <li><strong>Android Views:</strong> Traditional UI system using XML layouts and View subclasses</li>
+    <li><strong>Gradle:</strong> Build automation system used for Android project compilation and packaging</li>
+  </ul>
+
+  <h3>1.2 Cross-Platform Development</h3>
+  <p><strong>Definition:</strong> Development approaches enabling code sharing across multiple platforms while targeting native performance and appearance.</p>
+  
+  <ul>
+    <li><strong>React Native:</strong> Framework using JavaScript and React for building natively rendered mobile applications</li>
+    <li><strong>Flutter:</strong> Google's UI toolkit using Dart language and custom rendering engine</li>
+    <li><strong>Xamarin:</strong> Platform using C# and .NET for cross-platform mobile development (now .NET MAUI)</li>
+    <li><strong>Kotlin Multiplatform:</strong> Kotlin feature enabling sharing code between different platforms</li>
+    <li><strong>Ionic:</strong> Framework using web technologies wrapped in native containers via Capacitor or Cordova</li>
+    <li><strong>NativeScript:</strong> Framework enabling direct access to native APIs from JavaScript/TypeScript</li>
+    <li><strong>Unity:</strong> Cross-platform game engine supporting mobile deployment</li>
+  </ul>
+
+  <h3>1.3 Hybrid Development</h3>
+  <p><strong>Definition:</strong> Approach wrapping web applications in native containers to access device features while using web technologies.</p>
+  
+  <ul>
+    <li><strong>Apache Cordova:</strong> Platform for building native mobile applications using HTML, CSS, and JavaScript</li>
+    <li><strong>Capacitor:</strong> Cross-platform native runtime for web apps, modern successor to Cordova</li>
+    <li><strong>PhoneGap:</strong> Adobe distribution of Apache Cordova (discontinued)</li>
+    <li><strong>WebView:</strong> System component displaying web content within native applications</li>
+  </ul>
+
+  <h2>UI Component Taxonomy</h2>
+  <h3>2.1 Layout Containers</h3>
+  <p><strong>iOS (UIKit):</strong> UIView, UIScrollView, UITableView, UICollectionView, UIStackView, UIPageViewController</p>
+  <p><strong>iOS (SwiftUI):</strong> VStack, HStack, ZStack, List, Form, ScrollView, LazyVStack, LazyHStack</p>
+  <p><strong>Android (Views):</strong> LinearLayout, RelativeLayout, ConstraintLayout, FrameLayout, RecyclerView, ScrollView</p>
+  <p><strong>Android (Compose):</strong> Column, Row, Box, LazyColumn, LazyRow, Scaffold, Surface</p>
+  <p><strong>React Native:</strong> View, ScrollView, FlatList, SectionList, SafeAreaView</p>
+  <p><strong>Flutter:</strong> Column, Row, Stack, ListView, GridView, Scaffold, Container</p>
+
+  <h3>2.2 Input Controls</h3>
+  <p><strong>Text Input:</strong> UITextField/iOS, TextField/SwiftUI, EditText/Android, TextInput/React Native, TextField/Flutter</p>
+  <p><strong>Buttons:</strong> UIButton/iOS, Button/SwiftUI, Button/Android, Pressable/React Native, ElevatedButton/Flutter</p>
+  <p><strong>Selection:</strong> UISwitch/UISegmentedControl/iOS, Switch/Chip/Android, Switch/Radio/React Native, Switch/Checkbox/Flutter</p>
+  <p><strong>Pickers:</strong> UIPickerView/UIDatePicker/iOS, Spinner/DatePicker/Android, Picker/Flutter</p>
+
+  <h3>2.3 Display Components</h3>
+  <p><strong>Text Display:</strong> UILabel/iOS, Text/SwiftUI, TextView/Android, Text/React Native, Text/Flutter</p>
+  <p><strong>Images:</strong> UIImageView/iOS, Image/SwiftUI, ImageView/Android, Image/React Native, Image/Flutter</p>
+  <p><strong>Progress:</strong> UIProgressView/UIActivityIndicatorView/iOS, ProgressBar/ProgressIndicator/Android, ActivityIndicator/React Native, CircularProgressIndicator/Flutter</p>
+  <p><strong>Web Content:</strong> WKWebView/iOS, WebView/Android, WebView/React Native, WebView/Flutter</p>
+
+  <h2>Architectural Pattern Taxonomy</h2>
+  <h3>3.1 Presentation Patterns</h3>
+  <ul>
+    <li><strong>MVC (Model-View-Controller):</strong> Pattern separating data, presentation, and control logic</li>
+    <li><strong>MVP (Model-View-Presenter):</strong> Variation with passive View and Presenter mediating interactions</li>
+    <li><strong>MVVM (Model-View-ViewModel):</strong> Pattern using ViewModel to expose data bindings to View</li>
+    <li><strong>MVI (Model-View-Intent):</strong> Unidirectional pattern treating user actions as intents</li>
+    <li><strong>VIPER:</strong> iOS-specific pattern dividing responsibilities into View, Interactor, Presenter, Entity, Router</li>
+  </ul>
+
+  <h3>3.2 Architectural Concepts</h3>
+  <ul>
+    <li><strong>Dependency Injection:</strong> Technique supplying dependencies from external sources rather than creating internally</li>
+    <li><strong>Inversion of Control:</strong> Principle delegating control flow to framework or container</li>
+    <li><strong>Repository Pattern:</strong> Abstraction layer between data sources and business logic</li>
+    <li><strong>Clean Architecture:</strong> Layered architecture with dependency rules directing inward</li>
+    <li><strong>Hexagonal Architecture:</strong> Ports and adapters pattern isolating core logic</li>
+  </ul>
+
+  <h2>State Management Taxonomy</h2>
+  <h3>4.1 State Categories</h3>
+  <ul>
+    <li><strong>UI State:</strong> Interface-specific state including loading states, error displays, input values</li>
+    <li><strong>Session State:</strong> User authentication status, preferences, cached credentials</li>
+    <li><strong>Domain State:</strong> Business logic data including entities, relationships, calculations</li>
+    <li><strong>Navigation State:</strong> Current screen, back stack, navigation parameters</li>
+    <li><strong>App State:</strong> Global application status including connectivity, permissions, lifecycle</li>
+  </ul>
+
+  <h3>4.2 State Management Solutions</h3>
+  <ul>
+    <li><strong>Redux:</strong> Predictable state container using actions, reducers, and single store</li>
+    <li><strong>MobX:</strong> Reactive state management using observable properties and reactions</li>
+    <li><strong>Provider:</strong> Flutter widget making data available to descendants</li>
+    <li><strong>BLoC:</strong> Business Logic Component pattern separating presentation from business logic</li>
+    <li><strong>Riverpod:</strong> Flutter state management framework improving on Provider</li>
+    <li><strong>ViewModel:</strong> Architecture component managing UI-related data lifecycle-consciously</li>
+    <li><strong>ObservableObject:</strong> SwiftUI protocol for external reference types participating in state management</li>
+  </ul>
+
+  <h2>Data Storage Taxonomy</h2>
+  <h3>5.1 Local Storage</h3>
+  <ul>
+    <li><strong>Key-Value:</strong> UserDefaults/iOS, SharedPreferences/DataStore/Android, AsyncStorage/React Native, SharedPreferences/Flutter</li>
+    <li><strong>SQLite:</strong> Embedded relational database available on both platforms</li>
+    <li><strong>Core Data:</strong> iOS object graph and persistence framework</li>
+    <li><strong>Room:</strong> Android abstraction layer over SQLite providing compile-time SQL verification</li>
+    <li><strong>Realm:</strong> Cross-platform mobile database with object-oriented API</li>
+    <li><strong>Hive:</strong> Lightweight key-value database for Flutter and Dart</li>
+  </ul>
+
+  <h3>5.2 Cloud Storage</h3>
+  <ul>
+    <li><strong>Firebase:</strong> Google's mobile platform providing Firestore, Realtime Database, and Cloud Storage</li>
+    <li><strong>iCloud:</strong> Apple's cloud storage and synchronization service</li>
+    <li><strong>AWS Amplify:</strong> Amazon's development platform for cloud-enabled applications</li>
+    <li><strong>Supabase:</strong> Open-source Firebase alternative using PostgreSQL</li>
+  </ul>
+
+  <h2>Development Lifecycle Terminology</h2>
+  <h3>6.1 Development Phase</h3>
+  <ul>
+    <li><strong>IDE:</strong> Integrated Development Environment providing comprehensive facilities for software development</li>
+    <li><strong>SDK:</strong> Software Development Kit containing tools, libraries, and documentation</li>
+    <li><strong>API:</strong> Application Programming Interface defining interactions between software components</li>
+    <li><strong>Emulator:</strong> Software mimicking hardware behavior for testing without physical device</li>
+    <li><strong>Simulator:</strong> iOS-specific software replicating device behavior</li>
+    <li><strong>Hot Reload:</strong> Feature injecting updated code without losing application state</li>
+    <li><strong>Hot Restart:</strong> Feature restarting application with updated code</li>
+  </ul>
+
+  <h3>6.2 Testing Terminology</h3>
+  <ul>
+    <li><strong>Unit Test:</strong> Testing individual components in isolation</li>
+    <li><strong>Integration Test:</strong> Testing component interactions</li>
+    <li><strong>UI Test:</strong> Testing user interface through automated interaction simulation</li>
+    <li><strong>E2E Test:</strong> End-to-end testing verifying complete user flows</li>
+    <li><strong>Mock:</strong> Simulated object mimicking real object behavior for testing</li>
+    <li><strong>Stub:</strong> Simplified implementation returning predefined responses</li>
+    <li><strong>Fixture:</strong> Test data establishing consistent baseline for tests</li>
+  </ul>
+
+  <h3>6.3 Distribution Terminology</h3>
+  <ul>
+    <li><strong>IPA:</strong> iOS App Store Package format for iOS applications</li>
+    <li><strong>APK:</strong> Android Package Kit format for Android applications</li>
+    <li><strong>App Bundle:</strong> Android publishing format enabling optimized APK generation</li>
+    <li><strong>Provisioning Profile:</strong> iOS file linking app ID, certificates, and devices</li>
+    <li><strong>Code Signing:</strong> Cryptographic process verifying app authenticity</li>
+    <li><strong>TestFlight:</strong> Apple's platform for beta testing iOS applications</li>
+    <li><strong>Play Console:</strong> Google's platform for publishing Android applications</li>
+  </ul>
+
+  <h2>Performance Terminology</h2>
+  <h3>7.1 Rendering Performance</h3>
+  <ul>
+    <li><strong>Frame Rate:</strong> Frequency of consecutive images displayed, measured in FPS (frames per second)</li>
+    <li><strong>Jank:</strong> Visual stuttering caused by missed frame deadlines</li>
+    <li><strong>Layout Pass:</strong> Phase calculating view positions and dimensions</li>
+    <li><strong>Draw Pass:</strong> Phase rendering content to display buffer</li>
+    <li><strong>Recomposition:</strong> Jetpack Compose process updating UI in response to state changes</li>
+    <li><strong>RenderObject:</strong> Flutter class handling layout and painting</li>
+  </ul>
+
+  <h3>7.2 Memory Management</h3>
+  <ul>
+    <li><strong>ARC:</strong> Automatic Reference Counting, iOS memory management approach</li>
+    <li><strong>Garbage Collection:</strong> Automatic memory reclamation identifying unreachable objects</li>
+    <li><strong>Memory Leak:</strong> Unreleased memory no longer needed but still allocated</li>
+    <li><strong>Retain Cycle:</strong> Mutual strong references preventing object deallocation</li>
+    <li><strong>Heap:</strong> Memory region for dynamic allocation</li>
+    <li><strong>Stack:</strong> Memory region for static allocation and call stack</li>
+  </ul>
+
+  <h2>Conclusion</h2>
+  <p>This ontology provides a structured framework for understanding mobile development terminology across platforms and approaches. As the ecosystem evolves, new terms emerge while existing concepts refine—this knowledge base serves as a living reference for navigating the ever-expanding vocabulary of mobile application development. For practical applications of these concepts, see our <a href="/mobile-app-development/tools/">Tools & Resources</a> section.</p>
+</TopicLayout>

@@ -1,0 +1,19 @@
+{
+  "name": "placebookmarks-com",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "astro": "^4.15.0",
+    "astro-seo": "^0.8.4",
+    "@astrojs/sitemap": "^3.2.0",
+    "dotenv": "^16.4.5"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.47.0"
+  }
+}

@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://placebookmarks.com/sitemap-index.xml

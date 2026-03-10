@@ -1,0 +1,102 @@
+---
+interface Props {
+  currentTopic: string;
+  currentPillar: string;
+}
+const { currentTopic, currentPillar } = Astro.props;
+
+const pillars = [
+  { name: 'Overview', slug: '' },
+  { name: 'History', slug: 'history' },
+  { name: 'Technical', slug: 'technical-deep-dive' },
+  { name: 'Ontology', slug: 'ontology' },
+  { name: 'Trends', slug: 'trends' },
+  { name: 'Tools', slug: 'tools' },
+  { name: 'Challenges', slug: 'challenges' }
+];
+---
+
+<nav class="breadcrumb-nav" aria-label="Breadcrumb">
+  <div class="breadcrumb">
+    <a href="/">Home</a>
+    <span class="separator">/</span>
+    <a href={`/${currentTopic}/`}>{currentTopic.replace(/-/g, ' ')}</a>
+    {currentPillar && (
+      <>
+        <span class="separator">/</span>
+        <span class="current">{currentPillar.replace(/-/g, ' ')}</span>
+      </>
+    )}
+  </div>
+  
+  <div class="pillar-nav">
+    {pillars.map(pillar => (
+      <a 
+        href={`/${currentTopic}/${pillar.slug}${pillar.slug ? '/' : ''}`}
+        class={currentPillar === pillar.slug ? 'active' : ''}
+      >
+        {pillar.name}
+      </a>
+    ))}
+  </div>
+</nav>
+
+<style>
+  .breadcrumb-nav {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e5e5e5;
+  }
+  .breadcrumb {
+    font-size: 0.85rem;
+    color: #666;
+    margin-bottom: 15px;
+  }
+  .breadcrumb a {
+    color: #667eea;
+    text-decoration: none;
+  }
+  .breadcrumb a:hover {
+    text-decoration: underline;
+  }
+  .separator {
+    margin: 0 8px;
+    color: #999;
+  }
+  .current {
+    color: #333;
+    font-weight: 500;
+  }
+  .pillar-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .pillar-nav a {
+    padding: 8px 16px;
+    background: #f0f0f0;
+    color: #333;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.2s;
+  }
+  .pillar-nav a:hover {
+    background: #667eea;
+    color: #fff;
+  }
+  .pillar-nav a.active {
+    background: #667eea;
+    color: #fff;
+  }
+  @media (max-width: 768px) {
+    .pillar-nav {
+      gap: 8px;
+    }
+    .pillar-nav a {
+      padding: 6px 12px;
+      font-size: 0.85rem;
+    }
+  }
+</style>

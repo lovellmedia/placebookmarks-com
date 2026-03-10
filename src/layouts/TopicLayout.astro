@@ -1,0 +1,52 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import Navigation from '../components/Navigation.astro';
+import ContentSection from '../components/ContentSection.astro';
+import Sidebar from '../components/Sidebar.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+  topic: string;
+  pillar: string;
+  relatedTopics?: Array<{ title: string; url: string }>;
+  keyPoints?: string[];
+}
+
+const { title, description, topic, pillar, relatedTopics = [], keyPoints = [] } = Astro.props;
+---
+
+<BaseLayout title={title} description={description}>
+  <div class="topic-layout">
+    <Navigation currentTopic={topic} currentPillar={pillar} />
+    <div class="content-wrapper">
+      <div class="main-content">
+        <ContentSection title={title}>
+          <slot />
+        </ContentSection>
+      </div>
+      <div class="sidebar-container">
+        <Sidebar relatedTopics={relatedTopics} keyPoints={keyPoints} />
+      </div>
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .topic-layout {
+    width: 100%;
+  }
+  .content-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 30px;
+  }
+  @media (max-width: 1024px) {
+    .content-wrapper {
+      grid-template-columns: 1fr;
+    }
+    .sidebar-container {
+      order: -1;
+    }
+  }
+</style>

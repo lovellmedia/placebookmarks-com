@@ -1,0 +1,71 @@
+---
+interface Props {
+  relatedTopics?: Array<{ title: string; url: string }>;
+  keyPoints?: string[];
+}
+
+const { relatedTopics = [], keyPoints = [] } = Astro.props;
+---
+
+<aside class="sidebar">
+  {keyPoints.length > 0 && (
+    <div class="sidebar-section">
+      <h3>Key Points</h3>
+      <ul>
+        {keyPoints.map(point => (
+          <li>{point}</li>
+        ))}
+      </ul>
+    </div>
+  )}
+  
+  {relatedTopics.length > 0 && (
+    <div class="sidebar-section">
+      <h3>Related Topics</h3>
+      <ul class="related-links">
+        {relatedTopics.map(topic => (
+          <li><a href={topic.url}>{topic.title}</a></li>
+        ))}
+      </ul>
+    </div>
+  )}
+</aside>
+
+<style>
+  .sidebar {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #e5e5e5;
+  }
+  .sidebar-section {
+    margin-bottom: 24px;
+  }
+  .sidebar-section:last-child {
+    margin-bottom: 0;
+  }
+  h3 {
+    font-size: 1rem;
+    margin-bottom: 12px;
+    color: #333;
+    border-bottom: 2px solid #667eea;
+    padding-bottom: 8px;
+  }
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  li {
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    color: #555;
+  }
+  .related-links a {
+    color: #667eea;
+    text-decoration: none;
+  }
+  .related-links a:hover {
+    text-decoration: underline;
+  }
+</style>
